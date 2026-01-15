@@ -1,5 +1,5 @@
 export const homeElements = {
     HOME: {
-        TITLE_PAGE: '.playgound-header',
+        TITLE_PAGE: '.playground-header',
     }
 }

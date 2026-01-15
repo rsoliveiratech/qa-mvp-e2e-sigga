@@ -7,11 +7,7 @@ class Util {
         return Math.random().toString(36).slice(-7)
     }
 
-    getRandonCode(){
-        this.textoAleatorio(6)
-    }
-
-    getRandonCode(tamanho) {
+    getRandonCode(tamanho = 6) {
         const letras = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz';
         let aleatorio = '';
         for (let i = 0; i < tamanho; i++) {
@@ -24,14 +20,15 @@ class Util {
     screenshot() {
         const dateFull = new Date();
 
-        var d = dateFull.getDate()
-        var m = dateFull.getMonth() + 1
-        var y = dateFull.getFullYear()
-        var h = dateFull.getHours()
-        var m = dateFull.getMinutes()
-        var s = dateFull.getSeconds()
+        const d = String(dateFull.getDate()).padStart(2, '0')
+        const month = String(dateFull.getMonth() + 1).padStart(2, '0')
+        const y = dateFull.getFullYear()
+        const hh = String(dateFull.getHours()).padStart(2, '0')
+        const mm = String(dateFull.getMinutes()).padStart(2, '0')
+        const ss = String(dateFull.getSeconds()).padStart(2, '0')
 
-        var dateTimeCurrent = '' + y + '-' + (m<=9 ? '0' + m : m) + '-' + (d <= 9 ? '0' + d : d) + ' ' + h + ':' + m + s;
+        // Use a filesystem-safe filename (no colons or spaces)
+        const dateTimeCurrent = `${y}-${month}-${d}_${hh}-${mm}-${ss}`
 
         cy.screenshot(dateTimeCurrent)
     }

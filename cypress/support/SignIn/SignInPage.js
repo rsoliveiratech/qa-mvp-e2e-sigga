@@ -1,3 +1,4 @@
+import { faker } from '@faker-js/faker'
 import user from '../../fixtures/user.json'
 import util from '../utils'
 
@@ -32,9 +33,7 @@ class AuthPage {
     }
 
     authenticateWithDataInvalid() {
-        var faker = require('faker');
-
-        this.fastLogin(faker.name.firstName(), util.getRandonPassword())
+        this.fastLogin(faker.person.firstName(), util.getRandonPassword())
     }
 
 }
