@@ -1,20 +1,22 @@
 {
-  "name": "project-structure-cypress-ui",
-  "version": "1.0.0",
-  "description": "Project: Demo QA",
+  "name": "qa-mvp-e2e-sigga",
+  "version": "0.0.2",
   "scripts": {
-    "test": "cypress run --config video=false --env allure=true",
+    "test": "cypress run --config video=false",
     "cy:open": "cypress open",
     "allure:clear": "rm -r allure-results/ allure-report || true",
     "allure:report": "allure generate allure-results",
     "test:reporter": "npx npm-run-all allure:clear test allure:report",
     "allure:open": "allure open allure-report"
   },
-  "keywords": [],
-  "author": "Renato Santana de Oliveira",
+  "keywords": [
+    "cypress",
+    "tests",
+    "mocha"
+  ],
   "devDependencies": {
+    "cypress": "15.9.0",
     "@shelex/cypress-allure-plugin": "2.23.0",
-    "cypress": "9.2.0",
-    "faker": "^5.5.3"
+    "faker": "^6.6.6"
   }
 }

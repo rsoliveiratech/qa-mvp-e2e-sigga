@@ -20,7 +20,7 @@ import '@shelex/cypress-allure-plugin';
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
 
-Cypress.SelectorPlayground.defaults({
+Cypress.ElementSelector.defaults({
     selectorPriority: ['data-test', 'data-testid', 'id', 'class', 'attributes', 'tag', 'nth-child']
 })
 
